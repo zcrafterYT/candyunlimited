@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import Cookies from "js-cookie";
@@ -49,3 +50,22 @@ export default function GlobalState({ children }) {
     </GlobalContext.Provider>
   );
 }
+=======
+'use client'
+
+import { createContext } from "react";
+
+
+
+export const GlobalContext = createContext(null);
+
+
+
+
+export default function GlobalState({children}){
+
+    return(
+        <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>
+    )
+}
+>>>>>>> bb43738 (WIP)
