@@ -34,6 +34,9 @@ body {
     rgb(var(--background-start-rgb));
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 body::-webkit-scrollbar {
   width: 1em;
 }
@@ -45,6 +48,10 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+<<<<<<< HEAD
 }
 =======
 >>>>>>> a8f7106 (Initial commit from Create Next App)
+=======
+}
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)

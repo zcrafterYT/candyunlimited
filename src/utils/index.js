@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const apiKey =  process.env.NEXT_PUBLIC_API_KEY
 const authDomain = process.env.NEXT_PUBLIC_AUTH_DOMAIN
 const  projectId = process.env.NEXT_PUBLIC_PROJECT_ID
@@ -6,6 +7,8 @@ const messagingSenderId = process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID
 const appId =  process.env.NEXT_PUBLIC_APP_ID
 const measurementId = process.env.NEXT_PUBLIC_MEASURMENT_ID
 
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 export const navOptions = [
     {
       id: "home",
@@ -33,12 +36,20 @@ export const navOptions = [
     {
       id: "adminListing",
       label: "Manage All Products",
+<<<<<<< HEAD
       path: "/adminView/all-products",
+=======
+      path: "/admin-view/all-products",
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
     },
     {
       id: "adminNewProduct",
       label: "Add New Product",
+<<<<<<< HEAD
       path: "/adminView/add-product",
+=======
+      path: "/admin-view/add-product",
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
     },
   ];
 
@@ -98,6 +109,7 @@ export const navOptions = [
       label: "Password",
       componentType: "input",
     },
+<<<<<<< HEAD
   ];
 
   export const adminAddProductformControls = [
@@ -211,3 +223,6 @@ export const navOptions = [
 
 
  export const firebaseStorageUrl = process.env.FIREBASE_STORAG_URL
+=======
+  ];
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)

@@ -29,7 +29,11 @@ export default function Login() {
 
   const router = useRouter();
 
+<<<<<<< HEAD
   (formData);
+=======
+  console.log(formData);
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
   function isValidForm() {
     return formData &&
@@ -46,7 +50,11 @@ export default function Login() {
     setComponentLevelLoader({ loading: true, id: "" });
     const res = await login(formData);
 
+<<<<<<< HEAD
     (res);
+=======
+    console.log(res);
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
     if (res.success) {
       toast.success(res.message, {
@@ -67,7 +75,11 @@ export default function Login() {
     }
   }
 
+<<<<<<< HEAD
   (isAuthUser, user);
+=======
+  console.log(isAuthUser, user);
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
   useEffect(() => {
     if (isAuthUser) router.push("/");

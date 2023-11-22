@@ -4,6 +4,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 export default function CommonModal({
   modalTitle,
   mainContent,
@@ -16,12 +19,15 @@ export default function CommonModal({
   return (
     <Transition.Root show={show} as={Fragment}>
       <Dialog as="div" className={"relative z-10"} onClose={setShow}>
+<<<<<<< HEAD
 =======
 export default function CommonModal() {
   return (
     <Transition.Root as={Fragment}>
       <Dialog as="div" className={"relative z-10"}>
 >>>>>>> bb43738 (WIP)
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-900"
@@ -46,6 +52,9 @@ export default function CommonModal() {
                 leaveTo="opacity-0"
               >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
                 <Dialog.Panel className={"w-screen max-w-md"}>
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-x1">
                     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
@@ -65,9 +74,12 @@ export default function CommonModal() {
                     </div>
                   </div>
                 </Dialog.Panel>
+<<<<<<< HEAD
 =======
                 <Dialog.Panel className={"w-screen max-w-md"}></Dialog.Panel>
 >>>>>>> bb43738 (WIP)
+=======
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
               </Transition.Child>
             </div>
           </div>

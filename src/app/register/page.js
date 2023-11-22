@@ -24,6 +24,10 @@ export default function Register() {
 
   const router = useRouter()
 
+<<<<<<< HEAD
+=======
+  console.log(formData);
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
   function isFormValid() {
     return formData &&
@@ -37,7 +41,11 @@ export default function Register() {
       : false;
   }
 
+<<<<<<< HEAD
   (isFormValid());
+=======
+  console.log(isFormValid());
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
   async function handleRegisterOnSubmit() {
     setPageLevelLoader(true);
@@ -58,7 +66,11 @@ export default function Register() {
       setFormData(initialFormData);
     }
 
+<<<<<<< HEAD
     (data);
+=======
+    console.log(data);
+>>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
   }
 
   useEffect(() => {
