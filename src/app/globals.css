@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+=======
+>>>>>>> a8f7106 (Initial commit from Create Next App)
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +12,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+<<<<<<< HEAD
 @media (prefers-color-scheme: dark ) {
+=======
+@media (prefers-color-scheme: dark) {
+>>>>>>> a8f7106 (Initial commit from Create Next App)
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -26,6 +33,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+<<<<<<< HEAD
 body::-webkit-scrollbar {
   width: 1em;
 }
@@ -38,3 +46,5 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+=======
+>>>>>>> a8f7106 (Initial commit from Create Next App)
