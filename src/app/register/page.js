@@ -24,7 +24,6 @@ export default function Register() {
 
   const router = useRouter()
 
-  console.log(formData);
 
   function isFormValid() {
     return formData &&
@@ -38,7 +37,7 @@ export default function Register() {
       : false;
   }
 
-  console.log(isFormValid());
+  (isFormValid());
 
   async function handleRegisterOnSubmit() {
     setPageLevelLoader(true);
@@ -59,7 +58,7 @@ export default function Register() {
       setFormData(initialFormData);
     }
 
-    console.log(data);
+    (data);
   }
 
   useEffect(() => {

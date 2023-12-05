@@ -12,6 +12,6 @@ export const login = async (formData) => {
 
     return data;
   } catch (error) {
-    console.log(error);
+    (error);
   }
 };
