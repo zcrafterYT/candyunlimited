@@ -1,3 +1,11 @@
+const apiKey =  process.env.API_KEY
+const authDomain = process.env.AUTH_DOMAIN
+const  projectId = process.env.PROJECT_ID
+const storageBucket =  process.env.STORAGE_BUCKET
+const messagingSenderId = process.env.MESSAGING_SENDER_ID
+const appId =  process.env.APP_ID
+const measurementId = process.env.MEASURMENT_ID
+
 export const navOptions = [
     {
       id: "home",
@@ -25,12 +33,12 @@ export const navOptions = [
     {
       id: "adminListing",
       label: "Manage All Products",
-      path: "/admin-view/all-products",
+      path: "/adminView/all-products",
     },
     {
       id: "adminNewProduct",
       label: "Add New Product",
-      path: "/admin-view/add-product",
+      path: "/adminView/add-product",
     },
   ];
 
@@ -91,3 +99,90 @@ export const navOptions = [
       componentType: "input",
     },
   ];
+
+  export const adminAddProductformControls = [
+    {
+      id: "name",
+      type: "text",
+      placeholder: "Enter name",
+      label: "Name",
+      componentType: "input",
+    },
+    {
+      id: "price",
+      type: "number",
+      placeholder: "Enter price",
+      label: "Price",
+      componentType: "input",
+    },
+    {
+      id: "description",
+      type: "text",
+      placeholder: "Enter description",
+      label: "Description",
+      componentType: "input",
+    },
+    {
+      id: "category",
+      type: "",
+      placeholder: "",
+      label: "Category",
+      componentType: "select",
+      options: [
+        {
+          id: "Snacks",
+          label: "Snacks",
+        },
+        {
+          id: "Drinks",
+          label: "Drinks",
+        },
+      ],
+    },
+    {
+      id: "deliveryInfo",
+      type: "text",
+      placeholder: "Enter deliveryInfo",
+      label: "Delivery Info",
+      componentType: "input",
+    },
+    {
+      id: "onSale",
+      type: "",
+      placeholder: "",
+      label: "On Sale",
+      componentType: "select",
+      options: [
+        {
+          id: "yes",
+          label: "Yes",
+        },
+        {
+          id: "no",
+          label: "No",
+        },
+      ],
+    },
+    {
+      id: "priceDrop",
+      type: "number",
+      placeholder: "Enter Price Drop",
+      label: "Price Drop",
+      componentType: "input",
+    },
+  ];
+
+
+
+  export const firebaseConfig = {
+    apiKey: apiKey,
+    authDomain: authDomain,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId,
+    measurementId: measurementId
+  };
+
+
+ export const firebaseStorageUrl = process.env.FIREBASE_STORAG_URL

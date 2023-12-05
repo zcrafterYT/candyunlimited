@@ -10,9 +10,9 @@ const connectToDB = async () => {
 
   mongoose
     .connect(connectionUrl, configOptions)
-    .then(() => console.log("Ecommerce database connected successfully!"))
+    .then(() => ("Ecommerce database connected successfully!"))
     .catch((err) =>
-      console.log(`Getting Error from DB connection ${err.message}`)
+      (`Getting Error from DB connection ${err.message}`)
     );
 };
 
