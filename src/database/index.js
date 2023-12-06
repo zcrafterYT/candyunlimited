@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const configOptions = {
+const   configOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
