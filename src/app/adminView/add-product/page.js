@@ -18,8 +18,6 @@ const initialFormData = {
   name: "",
   price: 0,
   description: "",
-  category: "men",
-  sizes: [],
   deliveryInfo: "",
   onSale: "no",
   imageUrl: "",
@@ -52,6 +50,7 @@ async function helperForUploadingImageToFireBase(file){
         getDownloadURL(uploadImage.snapshot.ref)
           .then((downloadUrl) => resolve(downloadUrl))
           .catch((error) => reject(error));
+
       }
     );
   });
@@ -73,7 +72,10 @@ export default function AdminAddNewProduct(){
 
   async function handleAddProduct(){
 
+    console.log(formData);
     const res = await addNewProduct(formData)
+
+    console.log(res);
 
   }
 
@@ -115,7 +117,7 @@ export default function AdminAddNewProduct(){
               />
             ) : null
           )}
-          <button onClick={handleAddProduct}className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg text-white font-medium uppercase tracking-tighter">
+          <button onClick={handleAddProduct} className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg text-white font-medium uppercase tracking-tighter">
             add product
           </button>
         </div>
