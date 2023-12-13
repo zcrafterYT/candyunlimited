@@ -70,8 +70,8 @@ export default function Navbar() {
             onClick={() => router.push("/")}
             className="flex items-center cursor-pointer"
           >
-            <span className="slef-center text-2xl font-semibold whitespace-nowrap">
-              placeholder
+            <span className="slef-center text-2xl whitespace-nowrap font-pacifico">
+              Dieter's Candy Shop
             </span>
           </div>
           <div className="flex md:order-2 gap-2">
