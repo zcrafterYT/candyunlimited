@@ -3,15 +3,20 @@
 import { adminAddProductformControls, firebaseStorageUrl, firebaseConfig } from "@/utils"
 import InputComponent from "@/components/formElements/inputComponent";
 import SelectComponent from "@/components/formElements/selectComponent";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {initializeApp} from "firebase/app"
 import {getStorage, uploadBytesResumable,ref,getDownloadURL} from"firebase/storage"
 import { addNewProduct } from "@/services/product";
+import { GlobalContext } from "@/context";
+import { toast } from "react-toastify";
+import Notification from "@/components/Notification";
+import { useRouter } from "next/navigation";
 
 
 
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app,firebaseStorageUrl)
+const router = useRouter
 
 
 const initialFormData = {
@@ -58,6 +63,12 @@ async function helperForUploadingImageToFireBase(file){
 
 export default function AdminAddNewProduct(){
   const [formData, setFormData] = useState(initialFormData)
+
+  const {
+    componentLevelLoader,
+    setComponentLevelLoader
+  } = useContext(GlobalContext)
+
   async function handleImage(event){
     const exctractImageUrl = await helperForUploadingImageToFireBase(event.target.files[0])
 
@@ -71,13 +82,30 @@ export default function AdminAddNewProduct(){
   }
 
   async function handleAddProduct(){
+    setComponentLevelLoader({loading : true ,id : ''})
 
     console.log(formData);
     const res = await addNewProduct(formData)
 
-    console.log(res);
-
+    console.log(res );
+    if (res.success) {
+      setComponentLevelLoader({ loading: false, id: "" });
+      toast.success(res.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setFormData(initialFormData);
+      setTimeout(() => {
+        router.push("/admin-view/all-products");
+      }, 1000);
+    } else {
+      toast.error(res.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setComponentLevelLoader({ loading: false, id: "" });
+      setFormData(initialFormData);
+    }
   }
+
 
   return(
     <div className="w-full mt-5 mr-0 mb-0 ml-0 relative">
@@ -120,8 +148,18 @@ export default function AdminAddNewProduct(){
           <button onClick={handleAddProduct} className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg text-white font-medium uppercase tracking-tighter">
             add product
           </button>
+          {
+            componentLevelLoader && componentLevelLoader.loading ? (
+              <componentLevelLoader
+              text = {'adding product'}
+              color={'#ffffff'}
+              loading= {componentLevelLoader && componentLevelLoader.loading}
+              />
+            ) : ('add product')
+          } 
         </div>
       </div>
+      <Notification/>
     </div>
   )
 
