@@ -14,13 +14,15 @@ export default function GlobalState({ children }) {
   });
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);
+  const [currentUpdatedProduct, setCurrentUpdatedProduct] = useState(null);
 
   useEffect(() => {
-    (Cookies.get("token"));
+    Cookies.get("token");
 
     if (Cookies.get("token") !== undefined) {
       setIsAuthUser(true);
       const userData = JSON.parse(localStorage.getItem("user")) || {};
+      setUser(userData);
     } else {
       setIsAuthUser(false);
     }
@@ -39,6 +41,8 @@ export default function GlobalState({ children }) {
         setUser,
         componentsLevelLoader,
         setComponentLevelLoader,
+        currentUpdatedProduct,
+        setCurrentUpdatedProduct,
       }}
     >
       {children}
