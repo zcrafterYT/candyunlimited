@@ -6,12 +6,13 @@ const ProductSchema = new mongoose.Schema(
     description: String,
     price: Number,
     category: String,
+    origin: String,
     deliveryInfo: String,
     onSale: String,
     priceDrop: Number,
     imageUrl: String,
   },
-  { timestamps: true }
+  { timestamps: false }
 );
 
 const Product =
