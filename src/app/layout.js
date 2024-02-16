@@ -1,8 +1,11 @@
+"use client"
+
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import GlobalState from "@/context";
 import Navbar from "@/components/navbar";
+import CookieConsentBanner from "@/components/cookieBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +21,7 @@ export default function RootLayout({ children }) {
           <main className="flex min-h-screen flex-col mt-[80px]">
             {children}
           </main>
+          <CookieConsentBanner/>
         </GlobalState>
       </body>
     </html>

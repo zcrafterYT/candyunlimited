@@ -1,5 +1,6 @@
 "use client";
 
+import CookieConsentBanner from "@/components/cookieBanner";
 import { GlobalContext } from "@/context";
 import { useContext } from "react";
 
