@@ -140,6 +140,31 @@ export const navOptions = [
       ],
     },
     {
+      id:"origin",
+      type:"",
+      placeholder:"",
+      label:"origin",
+      componentType: "select",
+      options:[
+        {
+          id:"US",
+          label:"America"
+        },
+        {
+          id:"EU",
+          label:"Europe",
+        },
+        {
+          id:"JP",
+          label:"Japan"
+        },
+        {
+          id:"ZH",
+          label:"China"
+        }
+      ]
+    },
+    {
       id: "deliveryInfo",
       type: "text",
       placeholder: "Enter deliveryInfo",

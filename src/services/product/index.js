@@ -1,7 +1,6 @@
 // add new product service
 
 import Cookies from "js-cookie";
-import { Result } from "postcss";
 
 export const addNewProduct = async (formData) => {
   try {
