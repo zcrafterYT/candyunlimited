@@ -1,6 +1,7 @@
 // add new product service
 
 import Cookies from "js-cookie";
+import { Result } from "postcss";
 
 export const addNewProduct = async (formData) => {
   try {
@@ -30,6 +31,38 @@ export const getAllProducts = async () => {
 
     const data = await res.json();
 
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getAllDrinks = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/admin/drinks", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAllSnacks = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/admin/snacks", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
