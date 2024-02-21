@@ -2,46 +2,37 @@ import connectToDB from "@/database";
 import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
+
+
 export const dynamic = "force-dynamic";
 
-export async function DELETE(req) {
-  try {
+export async function DELETE(req){
+  try{
     await connectToDB();
+    const {searchParams} = new URL(req.url)
+    const id = searchParams.get('id');
 
-    if (isAuthUser?.role === "admin") {
-      const { searchParams } = new URL(req.url);
-      const id = searchParams.get("id");
+    if(!id) return NextResponse.json({success: false, message:"something went wrong"});
 
-      if (!id)
-        return NextResponse.json({
-          success: false,
-          message: "Product ID is required",
-        });
+    const deleteProduct = await Product.findByIdAndDelete(id)
 
-      const deletedProduct = await Product.findByIdAndDelete(id);
-
-      if (deletedProduct) {
-        return NextResponse.json({
-          success: true,
-          message: "Product deleted successfully",
-        });
-      } else {
-        return NextResponse.json({
-          success: false,
-          message: "Failed to delete the product ! Please try again",
-        });
-      }
-    } else {
+    if(deleteProduct){
       return NextResponse.json({
-        success: false,
-        message: "You are not authenticated",
-      });
+        success: true,
+        message: "product deleted"
+      })
+    }else{
+      return NextResponse.json({
+        success:false,
+        message: "failed to delete product"
+      })
     }
-  } catch (e) {
+
+  }catch(e){
     console.log(error);
     return NextResponse.json({
       success: false,
-      message: "Something went wrong ! Please try again later",
-    });
+      message: "something went wrong"
+    })
   }
 }

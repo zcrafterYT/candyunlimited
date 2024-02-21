@@ -136,20 +136,38 @@ export const updateProduct = async (formData) => {
   }
 };
 
-export const deleteProduct = async(id) => {
+export const deleteAProduct = async(id)=>{
   try {
-
     const res = await fetch(`/api/admin/deleteProduct?id=${id}`,{
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        Authorization: `Bearer ${Cookies.get("token")}`,
+        Authorization: `Bearer ${Cookies.get("token")}`
       }
     })
 
-    const data = await res.json();
+    const data = await res.json()
+
     return data
-    
+
   } catch (e) {
     console.log(e);
+  }
+}
+
+
+export const productById = async(id) => {
+  try {
+    
+    const res = await fetch(`http://localhost:3000/api/admin/productByCategory?id=${id}`,{
+      method:'Get',
+      cache:'no-store'
+    })
+
+    const data = await res.json()
+
+    return data
+
+  } catch (e) {
+   console.log(e); 
   }
 }

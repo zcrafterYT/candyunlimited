@@ -6,6 +6,7 @@ import { Fragment, useContext, useEffect } from "react";
 import CommonModal from "../commonModal";
 import Cookies from "js-cookie";
 import { usePathname, useRouter } from "next/navigation";
+import { AccountBox, AdminPanelSettings, Login, Logout, ShoppingCart } from "@mui/icons-material";
 
 function NavItems({ isModalView = false, isAdminView, router }) {
   return (
@@ -82,15 +83,15 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex md:order-2 gap-2">
-            {!isAdminView && isAuthUser ? (
+            {!isAdminView && isAuthUser ? 
               <Fragment>
                 <button
                   className={
                     "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                   }
                   onClick={() => router.push("/account")}
-                >
-                  Account
+                > 
+                <AccountBox></AccountBox>
                 </button>
                 <button
                   className={
@@ -98,10 +99,11 @@ export default function Navbar() {
                   }
                   onClick={() => setShowCartModal(true)}
                 >
-                  Cart
+                  
+                  <ShoppingCart></ShoppingCart>
                 </button>
               </Fragment>
-            ) : null}
+             : null}
             {user?.role === "admin" ? (
               isAdminView ? (
                 <button
@@ -119,7 +121,7 @@ export default function Navbar() {
                     "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                   }
                 >
-                  Admin View
+                  <AdminPanelSettings></AdminPanelSettings>
                 </button>
               )
             ) : null}
@@ -130,7 +132,7 @@ export default function Navbar() {
                   "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                 }
               >
-                Logout
+                <Logout></Logout>
               </button>
             ) : (
               <button
@@ -139,7 +141,7 @@ export default function Navbar() {
                   "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                 }
               >
-                Login
+                <Login></Login>
               </button>
             )}
             <button
