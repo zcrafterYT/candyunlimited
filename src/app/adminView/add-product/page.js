@@ -53,7 +53,6 @@ async function helperForUploadingImageToFireBase(file) {
       "state_changed",
       (snapshot) => {},
       (error) => {
-        console.log(error);
         reject(error);
       },
       () => {
@@ -100,9 +99,6 @@ export default function AdminAddNewProduct() {
 
     const res = await currentUpdatedProduct !== null ? await updateProduct(formData) : await addNewProduct(formData)
 
-    console.log(formData);
-
-    console.log(res);
     if (res.success) {
       setComponentLevelLoader({ loading: false, id: "" });
       toast.success(res.message, {

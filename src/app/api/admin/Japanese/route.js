@@ -8,12 +8,12 @@ export async function GET(req) {
   try {
     await connectToDB();
 
-      const extractSnacks = await Product.find({category: "Snacks"});
+      const extractJP = await Product.find({origin: "JP"});
 
-      if (extractSnacks) {
+      if (extractJP) {
         return NextResponse.json({
           success: true,
-          data: extractSnacks,
+          data: extractJP,
         });
       } else {
         return NextResponse.json({

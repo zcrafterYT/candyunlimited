@@ -7,8 +7,8 @@ import { getAllDrinks } from "@/services/product";
 
 export default async function getAllClientDrinks(){
 
-  const allProducts = await getAllDrinks()
+  const allDrinks = await getAllDrinks()
        console.log(allProducts.category);
 
- return <CommonListing data={allProducts && allProducts.data}/>
+ return <CommonListing data={allDrinks && allDrinks.data}/>
 }

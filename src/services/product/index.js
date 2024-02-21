@@ -68,6 +68,53 @@ export const getAllSnacks = async () => {
   }
 };
 
+export const getAllUS = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/admin/American", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAllZH = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/admin/Chinese", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getAllJP = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/admin/Japanese", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export const updateProduct = async (formData) => {
   try {
