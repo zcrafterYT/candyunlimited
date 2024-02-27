@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client";
 
 import { GlobalContext } from "@/context";
@@ -12,22 +11,8 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const router = useRouter();
 
-=======
-'use client'
-
-import { GlobalContext } from "@/context";
-import { useContext } from "react";
-
-
-
-
-export default function Home() {
-
-  const {isAuthUser} = useContext(GlobalContext)
->>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 
   return (
-<<<<<<< HEAD
  
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <section className="">
@@ -57,7 +42,6 @@ export default function Home() {
     //   </section>
     // </main>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-<<<<<<< HEAD
     <section className="">
       <div className="grid max-w-screen-xl px-4 py-8 mx-suto  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
@@ -187,16 +171,5 @@ export default function Home() {
     </section>
   </main>
   );
-=======
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <h1>placeholder Name</h1>
-    </main>
-  )
->>>>>>> bb43738 (WIP)
-=======
-      <h1>placeholder Name</h1>
-    </main>
-  );
->>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
 }
 
