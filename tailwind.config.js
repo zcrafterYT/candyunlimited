@@ -12,12 +12,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-<<<<<<< HEAD
       fontFamily :{
         'pacifico' :["'Pacifico'", 'cursive']
       }
-=======
->>>>>>> a8f7106 (Initial commit from Create Next App)
     },
   },
   plugins: [],

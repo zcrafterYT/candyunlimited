@@ -21,11 +21,7 @@ export async function POST(req){
   const{ error } = schema.validate({email,password});
 
   if (error) {
-<<<<<<< HEAD
-    (error);
-=======
     console.log(error);
->>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
     return NextResponse.json({
       success: false,
       message: error.details[0].message,

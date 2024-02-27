@@ -12,10 +12,6 @@ export const registerNewUser = async (formData) => {
 
     return finalData;
   } catch (e) {
-<<<<<<< HEAD
     ("error", e);
-=======
-    console.log("error", e);
->>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
   }
 };

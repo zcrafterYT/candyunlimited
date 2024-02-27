@@ -12,10 +12,6 @@ export const login = async (formData) => {
 
     return data;
   } catch (error) {
-<<<<<<< HEAD
     (error);
-=======
-    console.log(error);
->>>>>>> 7abc6a7 (feat(auth)Added Login and Registration)
   }
 };
