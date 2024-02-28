@@ -6,7 +6,14 @@ import { Fragment, useContext, useEffect } from "react";
 import CommonModal from "../commonModal";
 import Cookies from "js-cookie";
 import { usePathname, useRouter } from "next/navigation";
-import { AccountBox, AdminPanelSettings, Login, Logout, ShoppingCart } from "@mui/icons-material";
+import {
+  AccountBox,
+  AdminPanelSettings,
+  Login,
+  Logout,
+  ShoppingCart,
+} from "@mui/icons-material";
+import CartModal from "../cartModal";
 
 function NavItems({ isModalView = false, isAdminView, router }) {
   return (
@@ -46,19 +53,24 @@ function NavItems({ isModalView = false, isAdminView, router }) {
 }
 
 export default function Navbar() {
-  const { showNavModal, setShowNavModal, currentUpdatedProduct , setCurrentUpdatedProduct } = useContext(GlobalContext);
+  const {
+    showNavModal,
+    setShowNavModal,
+    currentUpdatedProduct,
+    setCurrentUpdatedProduct,
+    showCartModal,
+    setShowCartModal,
+  } = useContext(GlobalContext);
   const { user, isAuthUser, setIsAuthUser, setUser } =
     useContext(GlobalContext);
 
   const pathName = usePathname();
   const router = useRouter();
 
-
-  useEffect(()=>{
-
-    if(pathName !== '/adminView/add-product' && currentUpdatedProduct !== null) setCurrentUpdatedProduct(null)
-
-  },[pathName])
+  useEffect(() => {
+    if (pathName !== "/adminView/add-product" && currentUpdatedProduct !== null)
+      setCurrentUpdatedProduct(null);
+  }, [pathName]);
 
   function handleLogout() {
     setIsAuthUser(false);
@@ -83,15 +95,15 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex md:order-2 gap-2">
-            {!isAdminView && isAuthUser ? 
+            {!isAdminView && isAuthUser ? (
               <Fragment>
                 <button
                   className={
                     "mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium upprcase tracking-wide text-white"
                   }
                   onClick={() => router.push("/account")}
-                > 
-                <AccountBox></AccountBox>
+                >
+                  <AccountBox></AccountBox>
                 </button>
                 <button
                   className={
@@ -99,11 +111,10 @@ export default function Navbar() {
                   }
                   onClick={() => setShowCartModal(true)}
                 >
-                  
                   <ShoppingCart></ShoppingCart>
                 </button>
               </Fragment>
-             : null}
+            ) : null}
             {user?.role === "admin" ? (
               isAdminView ? (
                 <button
@@ -177,6 +188,9 @@ export default function Navbar() {
         show={showNavModal}
         setShow={setShowNavModal}
       />
+      {
+        showCartModal && <CartModal/>
+      }
     </>
   );
 }

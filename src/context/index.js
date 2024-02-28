@@ -15,6 +15,16 @@ export default function GlobalState({ children }) {
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);
   const [currentUpdatedProduct, setCurrentUpdatedProduct] = useState(null);
+  const [showCartModal, setShowCartModal] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [addresses, setAddresses] = useState([]);
+  const [addressFormData, setAddressFormData] = useState({
+    fullName: "",
+    city: "",
+    country: "",
+    postalCode: "",
+    address: "",
+  });
 
   useEffect(() => {
     Cookies.get("token");
@@ -43,6 +53,8 @@ export default function GlobalState({ children }) {
         setComponentLevelLoader,
         currentUpdatedProduct,
         setCurrentUpdatedProduct,
+        showCartModal,
+        setShowCartModal,
       }}
     >
       {children}
