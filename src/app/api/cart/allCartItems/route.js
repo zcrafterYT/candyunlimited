@@ -1,5 +1,4 @@
 import connectToDB from "@/database";
-import AuthUser from "@/middleware/authUser";
 import Cart from "@/models/cart";
 import { NextResponse } from "next/server";
 
@@ -9,9 +8,6 @@ export async function GET(req) {
   try {
     await connectToDB();
 
-    const isAuthUser = await AuthUser(req);
-
-    if (isAuthUser) {
       const { searchParams } = new URL(req.url);
       const id = searchParams.get("id");
 
@@ -33,12 +29,6 @@ export async function GET(req) {
           status: 204,
         });
       }
-    } else {
-      return NextResponse.json({
-        success: false,
-        message: "You are not authenticated",
-      });
-    }
   } catch (e) {
     return NextResponse.json({
       success: false,

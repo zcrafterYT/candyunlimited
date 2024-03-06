@@ -64,23 +64,6 @@ export const navOptions = [
       label: "Password",
       componentType: "input",
     },
-    {
-      id: "role",
-      type: "",
-      placeholder: "",
-      label: "Role",
-      componentType: "select",
-      options: [
-        {
-          id: "admin",
-          label: "Admin",
-        },
-        {
-          id: "customer",
-          label: "customer",
-        },
-      ],
-    },
   ];
 
   export const loginFormControls = [
@@ -211,3 +194,41 @@ export const navOptions = [
 
 
  export const firebaseStorageUrl = process.env.FIREBASE_STORAG_URL
+
+ export const addNewAddressFormControls = [
+  {
+    id: "fullName",
+    type: "input",
+    placeholder: "Enter your full name",
+    label: "Full Name",
+    componentType: "input",
+  },
+  {
+    id: "address",
+    type: "input",
+    placeholder: "Enter your full address",
+    label: "Address",
+    componentType: "input",
+  },
+  {
+    id: "city",
+    type: "input",
+    placeholder: "Enter your city",
+    label: "City",
+    componentType: "input",
+  },
+  {
+    id: "country",
+    type: "input",
+    placeholder: "Enter your country",
+    label: "Country",
+    componentType: "input",
+  },
+  {
+    id: "postalCode",
+    type: "input",
+    placeholder: "Enter your postal code",
+    label: "Postal Code",
+    componentType: "input",
+  },
+];

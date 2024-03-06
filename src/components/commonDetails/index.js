@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { toast } from "react-toastify";
 import ComponentLevelLoader from "../loader/componentlevel";
 import Notification from "../Notification";
+import { addToCart } from "@/services/cart";
 
 export default function CommonDetails({ item }) {
   const {
@@ -13,6 +14,27 @@ export default function CommonDetails({ item }) {
     user,
     setShowCartModal,
   } = useContext(GlobalContext);
+
+  async function handleAddToCart(getItem) {
+    setComponentLevelLoader({ loading: true, id: "" });
+
+    const res = await addToCart({ productID: getItem._id, userID: user._id });
+    console.log(res , user._id);
+
+    if (res.success) {
+      toast.success(res.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setComponentLevelLoader({ loading: false, id: "" });
+      setShowCartModal(true);
+    } else {
+      toast.error(res.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setComponentLevelLoader({ loading: false, id: "" });
+      setShowCartModal(true);
+    }
+  }
 
 
   return (
@@ -67,7 +89,7 @@ export default function CommonDetails({ item }) {
                     item.onSale === "yes" ? "line-through" : ""
                   }`}
                 >
-                  ${item && item.price}
+                  {item && item.price}€
                 </h1>
                 {item.onSale === "yes" ? (
                   <h1 className="text-3xl font-bold text-red-700">{`$${(

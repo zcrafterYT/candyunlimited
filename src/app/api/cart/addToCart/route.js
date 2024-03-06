@@ -1,5 +1,5 @@
 import connectToDB from "@/database";
-import AuthUser from "@/middleware/authUser";
+import AuthUser from "@/app/middleware/AuthUser";
 import Cart from "@/models/cart";
 import Joi from "joi";
 import { NextResponse } from "next/server";
@@ -14,9 +14,7 @@ export const dynamic = "force-dynamic";
 export async function POST(req) {
   try {
     await connectToDB();
-    const isAuthUser = await AuthUser(req);
 
-    if (isAuthUser) {
       const data = await req.json();
       const {productID , userID} = data;
 
@@ -62,17 +60,11 @@ export async function POST(req) {
           message: "failed to add the product to cart ! Please try again.",
         });
       }
-    } else {
-      return NextResponse.json({
-        success: false,
-        message: "You are not authenticated",
-      });
-    }
   } catch (e) {
     console.log(e);
     return NextResponse.json({
       success: false,
-      message: "Something went wrong ! Please try again later",
+      message: "Something went wrong ! Please try again later" + e ,
     });
   }
 }

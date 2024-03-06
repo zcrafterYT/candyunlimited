@@ -46,12 +46,14 @@ export default function ProductButton({ item }) {
     const res = await addToCart({ productID: getItem._id, userID: user._id });
 
     if (res.success) {
+      console.log(res);
       toast.success(res.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
       setComponentLevelLoader({ loading: false, id: "" });
       setShowCartModal(true);
     } else {
+      console.log(res);
       toast.error(res.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
