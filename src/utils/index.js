@@ -40,6 +40,11 @@ export const navOptions = [
       label: "Add New Product",
       path: "/adminView/add-product",
     },
+    {
+      id: "pickByVoice",
+      label: "pickByVoiceTest",
+      path: "/adminView/pick-by-voice"
+    }
   ];
 
   export const registrationFormControls = [
